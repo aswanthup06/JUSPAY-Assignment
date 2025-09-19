@@ -8,4 +8,31 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
+  background-color: #F7F9FB;
+}
+
+.dashboard-grid-right{
+ /* background-color: #F7F9FB; */
+ background-color: beige;
+ border-radius:16px;
+ padding:24px;
+}
+
+
+.dashboard-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.dashboard-grid-three {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.main-sections{
+  display: flex;
+  flex-direction: column;
+  gap:28px;
 }
