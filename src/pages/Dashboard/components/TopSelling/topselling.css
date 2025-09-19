@@ -1,0 +1,24 @@
+.top-selling-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.top-selling-table th,
+.top-selling-table td {
+  padding: 8px 0px;
+  height: 40px;
+  text-align: left;
+}
+
+.top-selling-table th {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.top-selling-table td {
+  color: #111827;
+  font-size: 12px;
+}

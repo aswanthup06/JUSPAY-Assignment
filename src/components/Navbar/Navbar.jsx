@@ -1,8 +1,8 @@
-import SvgSun from "../icons/IconSun";
-import SvgHistory from "../icons/History";
-import SvgBell from "../icons/Bell";
-import SvgSide from "../icons/Side";
-import SvgStar from "../icons/SvgStar";
+import SvgSun from "./IconComps/IconSun";
+import SvgHistory from "./IconComps/History";
+import SvgBell from "./IconComps/Bell";
+import SvgSide from "./IconComps/Side";
+import SvgStar from "./IconComps/SvgStar";
 import "./Navbar.css";
 
 function Navbar() {

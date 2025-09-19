@@ -1,6 +1,10 @@
-import DashboardLayout from "../layouts/DashboardLayouts";
-import Card from "../components/Card/Card";
+import DashboardLayout from "../../layouts/DashboardLayouts";
+import Card from "../../components/Card/Card";
 import "./Dashboard.css";
+import TopSelling from "./components/TopSelling/TopSelling";
+import Location from "./components/Location/Location";
+import TotalSales from "./components/TotalSales/TotalSales";
+import Revenue from "./components/Revenue/Revenue";
 
 function Dashboard() {
   return (
@@ -22,13 +26,17 @@ function Dashboard() {
       </div>
 
       <div className="dashboard-grid-two">
-        <div className="dashboard-grid-right"></div>
-        <div className="dashboard-grid-right"></div>
+        <div className="dashboard-grid-right"><Revenue/> </div>
+        <div className="dashboard-grid-right"><Location /></div>
       </div>
 
       <div className="dashboard-grid-three">
-        <div className="dashboard-grid-right"></div>
-        <div className="dashboard-grid-right"></div>
+        <div className="dashboard-grid-right">
+          <TopSelling />
+        </div>
+        <div className="dashboard-grid-right">
+          <TotalSales />
+        </div>
       </div>
 </div>
 

@@ -1,5 +1,6 @@
-import SvgBugBeetle from "../icons/BugBeetle";
-import SvgBroadcast from "../icons/Broadcast";
+import SvgBugBeetle from "../RightSide/IconComps/BugBeetle";
+import SvgBroadcast from "../RightSide/IconComps/Broadcast";
+import SvgUser from "../RightSide/IconComps/User";
 
 export const notificationsData = [
   {
@@ -10,7 +11,7 @@ export const notificationsData = [
   },
   {
     id: 2,
-    icon: SvgBugBeetle,
+    icon: SvgUser,
     title: "New comment on your post",
     description: "5 minutes ago",
   },

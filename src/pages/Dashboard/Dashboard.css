@@ -11,6 +11,12 @@
   background-color: #F7F9FB;
 }
 
+.main-sections{
+  display: flex;
+  flex-direction: column;
+  gap:28px;
+}
+
 .dashboard-grid-right{
  /* background-color: #F7F9FB; */
  background-color: beige;
@@ -26,13 +32,19 @@
 }
 
 .dashboard-grid-three {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   gap: 28px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.main-sections{
-  display: flex;
-  flex-direction: column;
-  gap:28px;
+.dashboard-grid-three > .dashboard-grid-right:first-child { flex: 2; min-width: 0; }
+.dashboard-grid-three > .dashboard-grid-right:last-child  { flex: 1; min-width: 0; }
+
+.dashboard-grid-three .dashboard-grid-right{
+  padding:24px;
 }
+
+
+
+
