@@ -1,0 +1,33 @@
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: left;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.card .value {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.card .change {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.card .change.up {
+  color: green;
+}
+
+.card .change.down {
+  color: red;
+}

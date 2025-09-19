@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    font-family: "Inter", sans-serif;
+}
+
+
+/* Default Light Theme */
+body.light {
+  background: #f4f4f9;
+  color: #222;
+}
+
+/* Dark Theme */
+body.dark {
+  background: #121212;
+  color: #f4f4f9;
+}
+
+.app {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Shared button styles */
+button.theme-toggle {
+  padding: 10px 16px;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Light Mode Button */
+body.light .theme-toggle {
+  background: #ffcc00; /* yellow */
+  color: #222;
+}
+body.light .theme-toggle:hover {
+  background: #e6b800;
+}
+
+/* Dark Mode Button */
+body.dark .theme-toggle {
+  background: #6c63ff; /* purple */
+  color: white;
+}
+body.dark .theme-toggle:hover {
+  background: #574bdb;
+}
+
