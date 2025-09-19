@@ -1,5 +1,5 @@
 .right-sidebar {
-  width: 250px;
+  width: 280px;
   background: var(--sidebar-bg, #f9f9f9);
   color: var(--sidebar-text, #333);
   padding: 20px;
@@ -7,49 +7,26 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: 100%;
+  overflow-y: auto;
 }
 
-/* Profile Card */
-.profile-card {
-  text-align: center;
-  padding: 15px;
-  background: var(--card-bg, #fff);
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+.title-section {
+  padding: 8px 0 8px 0px;
+  margin-bottom: 8px;
 }
 
-.profile-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+.right-side-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }
 
-.profile-name {
-  margin: 10px 0 5px;
-  font-size: 1.2rem;
-}
-
-.profile-role {
-  font-size: 0.9rem;
-  color: gray;
-}
-
-/* Quick Links */
-.quick-links h4 {
-  margin-bottom: 10px;
-}
-
-.quick-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.quick-links li {
-  padding: 8px 0;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.quick-links li:hover {
-  color: #007bff;
+.right-side-description {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.4);
 }

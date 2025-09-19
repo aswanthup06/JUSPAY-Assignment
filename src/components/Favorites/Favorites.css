@@ -1,0 +1,23 @@
+.favorites{
+
+}
+
+.fav-title{
+    display: flex;
+}
+
+.fav-title-text{
+    padding:4px 8px 4px 8px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.fev-menu{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.fev-menu button{
+  text-align: start;
+}

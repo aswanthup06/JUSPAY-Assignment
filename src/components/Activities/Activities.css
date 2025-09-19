@@ -1,0 +1,26 @@
+.activities-card{
+    display: flex;
+    align-items:start;
+    gap:8px;
+    padding: 4px;
+}
+
+.activities-profile{
+    height:24px;
+    width:24px;
+    background-color: rgb(186, 187, 187);
+    border-radius:50px;
+    overflow: hidden;
+}
+
+.activities-profile-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.activities-card-section{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}

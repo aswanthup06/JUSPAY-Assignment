@@ -1,10 +1,18 @@
 .card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 16px;
+  background: #E3F5FF;
+  border-radius: 16px;
+  padding:24px;
   text-align: left;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  height:112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-data{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card h3 {
@@ -13,8 +21,10 @@
   color: #666;
 }
 
+
+
 .card .value {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   margin: 6px 0;
 }

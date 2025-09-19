@@ -1,53 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-*{
-    font-family: "Inter", sans-serif;
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-/* Default Light Theme */
-body.light {
-  background: #f4f4f9;
-  color: #222;
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Dark Theme */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 body.dark {
-  background: #121212;
+  background: black;
   color: #f4f4f9;
 }
 
-.app {
-  text-align: center;
-  padding: 2rem;
-}
-
-/* Shared button styles */
-button.theme-toggle {
-  padding: 10px 16px;
-  margin-top: 1rem;
+button {
+  margin: 0;
+  padding: 0;
   border: none;
-  border-radius: 8px;
+  outline: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  line-height: normal;
   cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-/* Light Mode Button */
-body.light .theme-toggle {
-  background: #ffcc00; /* yellow */
-  color: #222;
-}
-body.light .theme-toggle:hover {
-  background: #e6b800;
-}
-
-/* Dark Mode Button */
-body.dark .theme-toggle {
-  background: #6c63ff; /* purple */
-  color: white;
-}
-body.dark .theme-toggle:hover {
-  background: #574bdb;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0;
+  color: black;
 }
 
+.secondary-heading {
+  font-size: 14px;
+  font-weight: 600;
+}

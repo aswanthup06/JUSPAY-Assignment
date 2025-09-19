@@ -1,21 +1,48 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
-  padding: 12px 20px;
+  height:68px;
   border-bottom: 1px solid #e5e7eb;
   background: #ffffff;
+  padding:0px 28px 0px 28px;
 }
 
 .navbar .search {
-  padding: 8px 12px;
-  border: 1px solid #ddd;
+  height:28px;
+  padding:0px 8px 0px 8px;
   border-radius: 6px;
-  width: 220px;
+  width:160px;
+  border:white;
 }
 
-.navbar .icons span {
-  margin-left: 15px;
-  cursor: pointer;
-  font-size: 18px;
+
+
+.nav-buttons{
+  height:28px;
+  width:28px;
+  background-color: rgb(219, 219, 219);
+}
+
+.nav-right-buttons{
+  display:flex;
+  align-items: center;
+  gap:8px;
+}
+
+.nav-right-section{
+  display: flex;
+  align-items: center;
+  gap:20px;
+}
+
+.nav-left-section{
+  display: flex;
+  align-items: center;
+  gap:8px;
+}
+
+.nav-text{
+  font-size:16px;
+  font-weight:400;
 }
