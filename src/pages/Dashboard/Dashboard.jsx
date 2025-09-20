@@ -50,19 +50,19 @@ function Dashboard() {
         </div>
 
         <div className="dashboard-grid-two">
-          <div className="dashboard-grid-right">
-            <Revenue />{" "}
+          <div className="dashboard-grid-right dashboard-grid-right-one">
+            <Revenue />
           </div>
-          <div className="dashboard-grid-right">
+          <div className="dashboard-grid-right dashboard-grid-right-two">
             <Location />
           </div>
         </div>
 
         <div className="dashboard-grid-three">
-          <div className="dashboard-grid-right">
+          <div className="dashboard-grid-right dashboard-grid-right-one">
             <TopSelling />
           </div>
-          <div className="dashboard-grid-right">
+          <div className="dashboard-grid-right dashboard-grid-right-two">
             <TotalSales />
           </div>
         </div>

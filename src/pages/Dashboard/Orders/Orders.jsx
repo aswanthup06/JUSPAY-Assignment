@@ -4,87 +4,69 @@ import "./orders.css";
 import SvgPlus from "./IconsComps/Plus";
 import SvgFilter from "./IconsComps/Filter";
 import SvgArrows from "./IconsComps/Arrows";
-import { ordersData } from "./ordersData"; // Importing from separate data file
+import { ordersData } from "./ordersData";
 import SvgCalendar from "./IconsComps/Calendar";
+import SvgSearch from "../../../components/icons/Search";
+import SvgDot from "./IconsComps/Dot";
+import SvgLeft from "./IconsComps/Left";
+import SvgRight from "./IconsComps/Right";
 
 export default function Orders() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
   const [selectedOrders, setSelectedOrders] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const ordersPerPage = 10;
 
-  // Function to handle sorting
-  const requestSort = (key) => {
-    let direction = 'ascending';
-    if (sortConfig.key === key && sortConfig.direction === 'ascending') {
-      direction = 'descending';
-    }
-    setSortConfig({ key, direction });
-  };
-
-  // Sort orders based on configuration
-  const sortedOrders = React.useMemo(() => {
-    if (!sortConfig.key) return ordersData;
-    
-    return [...ordersData].sort((a, b) => {
-      if (a[sortConfig.key] < b[sortConfig.key]) {
-        return sortConfig.direction === 'ascending' ? -1 : 1;
-      }
-      if (a[sortConfig.key] > b[sortConfig.key]) {
-        return sortConfig.direction === 'ascending' ? 1 : -1;
-      }
-      return 0;
-    });
-  }, [ordersData, sortConfig]);
-
-  // Filter orders based on search term
-  const filteredOrders = sortedOrders.filter(order => 
-    order.user.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    order.project.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    order.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    order.address.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    order.status.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredOrders = ordersData.filter(
+    (order) =>
+      order.user.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      order.project.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      order.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      order.address.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      order.status.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Function to determine status class
   const getStatusClass = (status) => {
-    switch(status.toLowerCase()) {
-      case "in progress": return "status-in-progress";
-      case "complete": return "status-complete";
-      case "pending": return "status-pending";
-      case "approved": return "status-approved";
-      case "rejected": return "status-rejected";
-      default: return "";
+    switch (status.toLowerCase()) {
+      case "in progress":
+        return "status-in-progress";
+      case "complete":
+        return "status-complete";
+      case "pending":
+        return "status-pending";
+      case "approved":
+        return "status-approved";
+      case "rejected":
+        return "status-rejected";
+      default:
+        return "";
     }
   };
 
-  // Handle individual order selection
   const handleOrderSelect = (orderId) => {
-    if (selectedOrders.includes(orderId)) {
-      setSelectedOrders(selectedOrders.filter(id => id !== orderId));
-    } else {
-      setSelectedOrders([...selectedOrders, orderId]);
-    }
+    if (selectedOrders.includes(orderId))
+      setSelectedOrders(selectedOrders.filter((id) => id !== orderId));
+    else setSelectedOrders([...selectedOrders, orderId]);
   };
 
-  // Handle select all orders
   const handleSelectAll = () => {
-    if (selectAll) {
-      setSelectedOrders([]);
-    } else {
-      setSelectedOrders(filteredOrders.map(order => order.id));
-    }
+    if (selectAll) setSelectedOrders([]);
+    else setSelectedOrders(
+      currentOrders.map((order) => order.id)
+    );
     setSelectAll(!selectAll);
   };
 
-  // Update selectAll state when selectedOrders changes
-  React.useEffect(() => {
-    if (filteredOrders.length > 0 && selectedOrders.length === filteredOrders.length) {
-      setSelectAll(true);
-    } else {
-      setSelectAll(false);
-    }
-  }, [selectedOrders, filteredOrders]);
+  // Pagination logic
+  const totalPages = Math.ceil(filteredOrders.length / ordersPerPage);
+  const indexOfLastOrder = currentPage * ordersPerPage;
+  const indexOfFirstOrder = indexOfLastOrder - ordersPerPage;
+  const currentOrders = filteredOrders.slice(indexOfFirstOrder, indexOfLastOrder);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const handlePrev = () => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev));
+  const handleNext = () => setCurrentPage((prev) => (prev < totalPages ? prev + 1 : prev));
 
   return (
     <DashboardLayout>
@@ -108,12 +90,21 @@ export default function Orders() {
             </div>
 
             <div className="table-top-right">
-              <input 
-                type="text" 
-                placeholder="Search orders..." 
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
+              <div className="search-box-order">
+                <div className="search-icon-box-order">
+                  <SvgSearch />
+                </div>
+                <input
+                  type="text"
+                  className="search-order"
+                  placeholder="Search"
+                  value={searchTerm}
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    setCurrentPage(1); // reset page when search changes
+                  }}
+                />
+              </div>
             </div>
           </div>
 
@@ -126,60 +117,106 @@ export default function Orders() {
                       type="checkbox"
                       checked={selectAll}
                       onChange={handleSelectAll}
-                      disabled={filteredOrders.length === 0}
+                      disabled={currentOrders.length === 0}
                     />
                   </th>
-                  <th onClick={() => requestSort('id')}>
-                    Order ID {sortConfig.key === 'id' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
-                  </th>
-                  <th onClick={() => requestSort('user')}>
-                    User {sortConfig.key === 'user' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
-                  </th>
-                  <th onClick={() => requestSort('project')}>
-                    Project {sortConfig.key === 'project' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
-                  </th>
-                  <th onClick={() => requestSort('address')}>
-                    Address {sortConfig.key === 'address' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
-                  </th>
-                  <th onClick={() => requestSort('date')}>
-                  
-                    Date {sortConfig.key === 'date' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
-                  </th>
-                  <th onClick={() => requestSort('status')}>
-                    Status {sortConfig.key === 'status' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
-                  </th>
+                  <th>Order ID</th>
+                  <th>User</th>
+                  <th>Project</th>
+                  <th>Address</th>
+                  <th>Date</th>
+                  <th>Status</th>
                 </tr>
               </thead>
               <tbody>
-                {filteredOrders.map((order, index) => (
-                  <tr key={index} className={selectedOrders.includes(order.id) ? 'selected' : ''}>
+                {currentOrders.map((order) => (
+                  <tr
+                    key={order.id}
+                    className={
+                      selectedOrders.includes(order.id) ? "selected" : ""
+                    }
+                  >
                     <td>
-                      <input
-                        type="checkbox"
-                        checked={selectedOrders.includes(order.id)}
-                        onChange={() => handleOrderSelect(order.id)}
-                      />
+                      <div>
+                        <input
+                          type="checkbox"
+                          checked={selectedOrders.includes(order.id)}
+                          onChange={() => handleOrderSelect(order.id)}
+                        />
+                      </div>
                     </td>
-                    <td className="order-id">{order.id}</td>
-                    <td>{order.user}</td>
-                    <td>{order.project}</td>
-                    <td>{order.address}</td>
-                    <td className="date-box">  <SvgCalendar/>{order.date}</td>
                     <td>
-                      <span className={`status-badge ${getStatusClass(order.status)}`}>
-                        {order.status}
-                      </span>
+                      <div className="order-id">{order.id}</div>
+                    </td>
+                    <td>
+                      <div className="profile-table-box">
+                        <img
+                          className="profile-table"
+                          src={order.avatar}
+                          alt={order.user}
+                        />
+                        <span>{order.user}</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>{order.project}</div>
+                    </td>
+                    <td>
+                      <div>{order.address}</div>
+                    </td>
+                    <td>
+                      <div className="date-box">
+                        <SvgCalendar />
+                        {order.date}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="status-dot-wrapper">
+                        <SvgDot className={getStatusClass(order.status)} />
+                        <span
+                          className={`status-badge ${getStatusClass(
+                            order.status
+                          )}`}
+                        >
+                          {order.status}
+                        </span>
+                      </div>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            
-            {filteredOrders.length === 0 && (
+
+            {currentOrders.length === 0 && (
               <div className="no-results">
                 <p>No orders found matching your search.</p>
               </div>
             )}
+          </div>
+
+          {/* Pagination */}
+          <div className="pagination-section">
+            <div className="pagination-section-inner">
+              <div className="icon-box" onClick={handlePrev}>
+                <SvgLeft />
+              </div>
+
+              {Array.from({ length: totalPages }, (_, i) => (
+                <div
+                  key={i}
+                  className={`number-box titles ${
+                    currentPage === i + 1 ? "number-box-active" : ""
+                  }`}
+                  onClick={() => paginate(i + 1)}
+                >
+                  {i + 1}
+                </div>
+              ))}
+
+              <div className="icon-box" onClick={handleNext}>
+                <SvgRight />
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
   display: flex;
   padding: 4px 0px 4px 0px;
   align-items: center;
-  background-color: #1c1c1c0d;
+  background-color: var(--hover-main);
   border-radius: 8px;
   gap: 4px;
 }

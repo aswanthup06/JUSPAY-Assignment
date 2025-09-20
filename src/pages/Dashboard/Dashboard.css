@@ -28,7 +28,7 @@
 
 
 .dashboard-grid-two {
-  display: grid;
+  display:flex;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
 }
@@ -39,9 +39,12 @@
   width: 100%;
   box-sizing: border-box;
 }
-
-.dashboard-grid-three > .dashboard-grid-right:first-child { flex: 2; min-width: 0; }
-.dashboard-grid-three > .dashboard-grid-right:last-child  { flex: 1; min-width: 0; }
+.dashboard-grid-right-one{
+    flex: 1 1 0%;
+}
+.dashboard-grid-right-two{
+  width:272px;
+}
 
 .dashboard-grid-three .dashboard-grid-right{
   padding:24px;

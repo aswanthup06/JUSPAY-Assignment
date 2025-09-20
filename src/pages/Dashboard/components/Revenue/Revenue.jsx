@@ -6,6 +6,8 @@ function Revenue() {
       <div>
         <h2 className="secondary-heading">Revenue</h2>
       </div>
+
+   
     </div>
   );
 }

@@ -15,12 +15,15 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #1c1c1c;
-  --card-bg: #F7F9FB;
+  --card-bg: #f7f9fb;
   --border-color: #1c1c1c1a;
   --text-low: #1c1c1c66;
   --input-bg: #ffffff;
   --input-border: #ddd;
-  --default-style:#1c1c1c;
+  --default-style: #1c1c1c;
+  --light-blue: #a8c5da;
+  --light-bg:  #e2e8f0;
+  --hover-main:#1C1C1C0D;
 }
 
 body.dark {
@@ -31,17 +34,19 @@ body.dark {
   --card-bg: #ffffff0d;
   --input-bg: #2a2a2a;
   --input-border: #555;
-  --default-style:#C6C7F8;
+  --default-style: #c6c7f8;
+  --light-blue: #a8c5da;
+  --light-bg: rgba(28, 28, 28, 0.4);
+  --hover-main:#FFFFFF1A;
 }
-
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
 
-.icon-set{
-  color:var(--text-color) ;
+.icon-set {
+  color: var(--text-color);
 }
 
 .hide-scrollbar {
@@ -87,4 +92,10 @@ h6 {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
+}
+
+.titles-two {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
 }
