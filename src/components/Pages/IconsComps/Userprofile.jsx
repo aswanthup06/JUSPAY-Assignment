@@ -1,5 +1,5 @@
 import * as React from "react";
-const SvgIconSet4 = (props) => (
+const SvgUserprofile = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -19,4 +19,4 @@ const SvgIconSet4 = (props) => (
     />
   </svg>
 );
-export default SvgIconSet4;
+export default SvgUserprofile;

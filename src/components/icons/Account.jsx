@@ -1,5 +1,5 @@
 import * as React from "react";
-const SvgIdentificationCard = (props) => (
+const SvgAccount = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -19,4 +19,4 @@ const SvgIdentificationCard = (props) => (
     />
   </svg>
 );
-export default SvgIdentificationCard;
+export default SvgAccount;
