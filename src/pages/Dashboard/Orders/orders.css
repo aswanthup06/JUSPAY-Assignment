@@ -1,3 +1,8 @@
+.orders-container{
+  width:100%;
+  overflow: hidden;
+}
+
 /* Table Top Section */
 .table-top {
   display: flex;
@@ -61,12 +66,12 @@
 
 /* Table Container */
 .table-container {
-  overflow-x: auto;
+  width:100%;
+  overflow:scroll;
 }
 
 /* Orders Table */
 .orders-table {
-  width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   font-size: 12px;

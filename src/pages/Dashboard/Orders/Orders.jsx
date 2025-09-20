@@ -52,9 +52,7 @@ export default function Orders() {
 
   const handleSelectAll = () => {
     if (selectAll) setSelectedOrders([]);
-    else setSelectedOrders(
-      currentOrders.map((order) => order.id)
-    );
+    else setSelectedOrders(currentOrders.map((order) => order.id));
     setSelectAll(!selectAll);
   };
 
@@ -62,11 +60,16 @@ export default function Orders() {
   const totalPages = Math.ceil(filteredOrders.length / ordersPerPage);
   const indexOfLastOrder = currentPage * ordersPerPage;
   const indexOfFirstOrder = indexOfLastOrder - ordersPerPage;
-  const currentOrders = filteredOrders.slice(indexOfFirstOrder, indexOfLastOrder);
+  const currentOrders = filteredOrders.slice(
+    indexOfFirstOrder,
+    indexOfLastOrder
+  );
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  const handlePrev = () => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev));
-  const handleNext = () => setCurrentPage((prev) => (prev < totalPages ? prev + 1 : prev));
+  const handlePrev = () =>
+    setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev));
+  const handleNext = () =>
+    setCurrentPage((prev) => (prev < totalPages ? prev + 1 : prev));
 
   return (
     <DashboardLayout>

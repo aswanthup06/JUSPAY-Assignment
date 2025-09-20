@@ -1,11 +1,13 @@
 .sidebar {
-  width: 212px;
+  min-width: 212px;
+  max-width:212px;
   border-right: 1px solid var(--border-color);
   padding: 20px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   gap: 16px;
+  background-color:var(--bg-color);
 }
 
 .user-section {
