@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import SvgUserprofile from "./IconsComps/Userprofile";
+import SvgAccount from "./IconsComps/Account";
+import SvgCorporate from "./IconsComps/Corporate";
+import SvgBlog from "./IconsComps/Blog";
+import SvgSocial from "./IconsComps/Social";
 import SvgDownArrow from "../../components/icons/DownArrow";
 import SvgRightArrow from "../../components/icons/RightArrow";
 import "./Pages.css";
@@ -8,7 +12,9 @@ function Pages() {
   const [expandedMenus, setExpandedMenus] = useState({
     userProfile: true,
     account: false,
-    corporate: false
+    corporate: false,
+    blog: false,
+    social: false
   });
 
   const toggleMenu = (menu) => {
@@ -22,27 +28,32 @@ function Pages() {
     {
       id: 'userProfile',
       title: 'User Profile',
+      icon: <SvgUserprofile />,
       subItems: ['Overview', 'Projects', 'Campaigns', 'Documents', 'Followers']
     },
     {
       id: 'account',
       title: 'Account',
+      icon: <SvgAccount />,
       subItems: ['Personal Info', 'Security', 'Preferences', 'Billing']
     },
     {
       id: 'corporate',
       title: 'Corporate',
+      icon: <SvgCorporate />,
       subItems: ['Team', 'Departments', 'Offices']
     },
     {
       id: 'blog',
       title: 'Blog',
-      subItems: ['Team', 'Departments', 'Offices']
+      icon: <SvgBlog />,
+      subItems: ['Latest Posts', 'Categories', 'Tags']
     },
     {
       id: 'social',
       title: 'Social',
-      subItems: ['Team', 'Departments', 'Offices']
+      icon: <SvgSocial />,
+      subItems: ['Friends', 'Groups', 'Events']
     }
   ];
 
@@ -59,7 +70,7 @@ function Pages() {
               className={`page-menu ${expandedMenus[item.id] ? 'active' : ''}`}
               onClick={() => item.subItems.length > 0 && toggleMenu(item.id)}
             >
-              <div className="section">
+              <div className="section-one">
                 {item.subItems.length > 0 ? (
                   expandedMenus[item.id] ? <SvgDownArrow /> : <SvgRightArrow />
                 ) : (
@@ -67,11 +78,11 @@ function Pages() {
                 )}
               </div>
 
-              <div className="section">
-                <SvgUserprofile />
+              <div className="section-two">
+                {item.icon}
               </div>
 
-              <div className="section">
+              <div className="section-three">
                 <span className="titles">{item.title}</span>
               </div>
             </div>
@@ -80,10 +91,7 @@ function Pages() {
               <div className="submenu">
                 {item.subItems.map((subItem) => (
                   <div key={subItem} className="submenu-item">
-                   
-                    <div className="section">
-                      <span className="submenu-title">{subItem}</span>
-                    </div>
+                    <span className="titles">{subItem}</span>
                   </div>
                 ))}
               </div>
