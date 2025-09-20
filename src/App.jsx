@@ -1,22 +1,19 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import "./index.css";
+import Orders from "./pages/Dashboard/Orders/Orders";
 
 function App() {
-  // (Optional) If later you want page navigation
-  const [page] = useState("dashboard");
-
   return (
-    <>
-      {page === "dashboard" && <Dashboard />}
-      {/* You could add other pages like this:
-        {page === "ecommerce" && <Ecommerce />}
-        {page === "projects" && <Projects />}
-      */}
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/orders" element={<Orders />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
 
 

@@ -1,47 +1,55 @@
-.favorites{
-    display: flex;
-    flex-direction: column;
-    gap:4px;
-    padding-bottom:12px;
+.favorites {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 12px;
 }
 
-
-
-.fav-title{
-    display: flex;
-    height: 28px;
-    align-items: center;
+.fav-title {
+  display: flex;
+  height: 28px;
+  align-items: center;
+  gap: 8px;
 }
 
-.fav-title-text{
-    padding:4px 8px 4px 8px;
-    font-size: 14px;
-    font-weight: 400;
+.fav-title-text {
+  padding: 4px 8px 4px 8px;
+  font-size: 14px;
+  font-weight: 400;
+  height: 28px;
+  display: flex;
+  height: 28px;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.fav-title-text:hover {
+  background-color: rgb(228, 228, 228);
 }
 
 .fav-title-text-two {
   color: rgb(134, 134, 134);
 }
 
-.fev-menu{
-    display: flex;
-    flex-direction: column;
-    gap:4px;
+.fev-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.fev-menu button{
+.fev-menu button {
   text-align: start;
-  display:flex;
+  display: flex;
   align-items: center;
-  gap:8px;
+  gap: 8px;
   height: 28px;
 }
 
-
-.dot-icon{
-    height: 20px;
-    width:20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.dot-icon {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
