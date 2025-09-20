@@ -1,5 +1,4 @@
 .card {
-  background: #E3F5FF;
   border-radius: 16px;
   padding:24px;
   text-align: left;
@@ -8,6 +7,30 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.customers-card {
+  background-color: #E3F5FF; 
+  color:#1C1C1C;
+}
+
+
+
+
+.orders-card {
+   background-color:var(--card-bg); 
+}
+
+
+
+.revenue-card {
+   background-color:var(--card-bg); 
+}
+
+.growth-card {
+  background-color: #E5ECF6; 
+  color:#1C1C1C;
+}
+
 
 .card-data{
   display: flex;
@@ -18,26 +41,19 @@
 .card h3 {
   margin: 0;
   font-size: 14px;
-  color: #666;
 }
 
 
 
 .card .value {
   font-size: 24px;
-  font-weight: bold;
-  margin: 6px 0;
+  font-weight:600;
 }
 
 .card .change {
   font-size: 12px;
-  font-weight: bold;
+  font-weight:400;
+  line-height:18px;
 }
 
-.card .change.up {
-  color: green;
-}
 
-.card .change.down {
-  color: red;
-}

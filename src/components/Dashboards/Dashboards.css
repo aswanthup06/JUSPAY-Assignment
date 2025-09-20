@@ -18,7 +18,7 @@
   height: 16px;
   width: 4px;
   border-radius: 50px;
-  background-color: black;
+  background-color:var(--default-style);
 }
 .default-icon {
   height: 20px;

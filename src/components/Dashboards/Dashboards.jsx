@@ -43,7 +43,7 @@ function DashboardComp() {
   return (
     <div className="pages-container">
       <div className="pages-header">
-        <h2>Pages</h2>
+        <h2>Dashboards</h2>
       </div>
 
       <div className='default'>

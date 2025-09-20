@@ -1,3 +1,7 @@
+.main-sections{
+  margin-top:16px;
+}
+
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -8,7 +12,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
-  background-color: #F7F9FB;
 }
 
 .main-sections{
@@ -18,8 +21,7 @@
 }
 
 .dashboard-grid-right{
- /* background-color: #F7F9FB; */
- background-color: beige;
+ background-color:var(--card-bg); 
  border-radius:16px;
  padding:24px;
 }

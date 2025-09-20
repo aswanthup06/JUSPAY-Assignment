@@ -1,9 +1,7 @@
 .right-sidebar {
   width: 280px;
-  background: var(--sidebar-bg, #f9f9f9);
-  color: var(--sidebar-text, #333);
   padding: 20px;
-  border-left: 1px solid #ddd;
+  border-left: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -28,5 +26,5 @@
 .right-side-description {
   font-size: 12px;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.4);
+  color:var(--text-low);
 }

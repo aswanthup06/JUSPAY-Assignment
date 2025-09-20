@@ -14,11 +14,11 @@
 .top-selling-table th {
   font-size: 12px;
   font-weight: 400;
-  color: #6b7280;
-  border-bottom: 1px solid #e5e7eb;
+  color: var(--text-low);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .top-selling-table td {
-  color: #111827;
+  color:var(--text-color);
   font-size: 12px;
 }
