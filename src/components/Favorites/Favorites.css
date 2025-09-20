@@ -1,7 +1,16 @@
+.favorites{
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+    padding-bottom:12px;
+}
+
 
 
 .fav-title{
     display: flex;
+    height: 28px;
+    align-items: center;
 }
 
 .fav-title-text{
@@ -10,10 +19,14 @@
     font-weight: 400;
 }
 
+.fav-title-text-two {
+  color: rgb(134, 134, 134);
+}
+
 .fev-menu{
     display: flex;
     flex-direction: column;
-
+    gap:4px;
 }
 
 .fev-menu button{
@@ -21,4 +34,14 @@
   display:flex;
   align-items: center;
   gap:8px;
+  height: 28px;
+}
+
+
+.dot-icon{
+    height: 20px;
+    width:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

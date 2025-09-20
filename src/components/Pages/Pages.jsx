@@ -9,19 +9,10 @@ import SvgRightArrow from "../../components/icons/RightArrow";
 import "./Pages.css";
 
 function Pages() {
-  const [expandedMenus, setExpandedMenus] = useState({
-    userProfile: true,
-    account: false,
-    corporate: false,
-    blog: false,
-    social: false
-  });
+  const [activeMenu, setActiveMenu] = useState(null);
 
-  const toggleMenu = (menu) => {
-    setExpandedMenus(prev => ({
-      ...prev,
-      [menu]: !prev[menu]
-    }));
+  const toggleMenu = (menuId) => {
+    setActiveMenu(prev => (prev === menuId ? null : menuId));
   };
 
   const menuItems = [
@@ -67,12 +58,12 @@ function Pages() {
         {menuItems.map((item) => (
           <div key={item.id}>
             <div 
-              className={`page-menu ${expandedMenus[item.id] ? 'active' : ''}`}
+              className={`page-menu ${activeMenu === item.id ? 'active' : ''}`}
               onClick={() => item.subItems.length > 0 && toggleMenu(item.id)}
             >
               <div className="section-one">
                 {item.subItems.length > 0 ? (
-                  expandedMenus[item.id] ? <SvgDownArrow /> : <SvgRightArrow />
+                  activeMenu === item.id ? <SvgDownArrow /> : <SvgRightArrow />
                 ) : (
                   <div style={{ width: '16px' }}></div>
                 )}
@@ -87,7 +78,7 @@ function Pages() {
               </div>
             </div>
             
-            {item.subItems.length > 0 && expandedMenus[item.id] && (
+            {item.subItems.length > 0 && activeMenu === item.id && (
               <div className="submenu">
                 {item.subItems.map((subItem) => (
                   <div key={subItem} className="submenu-item">

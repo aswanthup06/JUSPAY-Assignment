@@ -5,16 +5,20 @@ function Favorites() {
     <div className="favorites">
       <div className="fav-title">
         <h2 className="fav-title-text">Favorites</h2>
-        <h2 className="fav-title-text">Recently</h2>
+        <h2 className="fav-title-text fav-title-text-two">Recently</h2>
       </div>
 
       <div className="fev-menu">
         <button>
-          <SvgDot />
+          <div className="dot-icon">
+            <SvgDot />
+          </div>
           <h2 className="titles"> Overview</h2>
         </button>
         <button>
-          <SvgDot />
+          <div className="dot-icon">
+            <SvgDot />
+          </div>
           <h2 className="titles"> Projects</h2>
         </button>
       </div>

@@ -1,3 +1,10 @@
+.pages-container{
+  display: flex;
+  flex-direction: column;
+  gap:4px;
+  padding-bottom:12px;
+}
+
 .pages-menus {
   display: flex;
   flex-direction: column;
@@ -58,10 +65,4 @@
   background-color: #f8fafc;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .pages-container {
-    width: 100%;
-    border-radius: 0;
-  }
-}
+
