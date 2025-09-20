@@ -5,7 +5,6 @@
   height: 68px;
   border-bottom: 1px solid var(--border-color);
   padding: 0 28px;
-  flex-wrap: wrap; /* allows wrapping on small screens */
   gap: 8px;
 }
 
@@ -90,7 +89,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
 }
 
 /* Right section spacing */
@@ -104,12 +102,14 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width:1080px) {
+
+  .location-nav{
+    display: none;
+  }
   .navbar {
     padding: 0 12px;
     height: auto;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 8px;
   }
 
@@ -118,13 +118,17 @@
     min-width: 0;
   }
 
-  .nav-left-section,
-  .nav-right-section {
+  .nav-left-section
+   {
     width: 100%;
     justify-content: flex-start;
     gap: 8px;
     flex-wrap: wrap;
   }
+
+.search-box{
+  display: none;
+}
 
   .nav-buttons {
     height: 36px;

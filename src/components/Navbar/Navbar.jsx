@@ -4,8 +4,8 @@ import SvgHistory from "./IconComps/History";
 import SvgBell from "./IconComps/Bell";
 import SvgSide from "./IconComps/Side";
 import SvgStar from "./IconComps/SvgStar";
-import SvgSearch from "../../components/icons/Search"
-import SvgText from "../../components/icons/Text"
+import SvgSearch from "../../components/icons/Search";
+import SvgText from "../../components/icons/Text";
 import "./Navbar.css";
 
 function Navbar({ toggleSidebar, toggleRightSidebar }) {
@@ -28,29 +28,22 @@ function Navbar({ toggleSidebar, toggleRightSidebar }) {
         <button className="nav-buttons">
           <SvgStar className="icon-set" />
         </button>
-        <div>
-          <h3 className="titles"><span className="nav-text ">Dashboards / </span>Default</h3>
+        <div className="location-nav">
+          <h3 className="titles">
+            <span className="nav-text ">Dashboards / </span>Default
+          </h3>
         </div>
       </div>
 
       <div className="nav-right-section">
-
-
         <div className="search-box">
           <div className="search-icon-box">
             <SvgSearch />
             <input type="text" placeholder="Search..." className="search" />
           </div>
-          
-      
 
-            
-            <SvgText />
-
-      
+          <SvgText />
         </div>
-
-
 
         <div className="nav-right-buttons">
           <button

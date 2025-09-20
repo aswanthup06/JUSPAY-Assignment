@@ -29,7 +29,6 @@
 
 .dashboard-grid-two {
   display:flex;
-  grid-template-columns: repeat(2, 1fr);
   gap: 28px;
 }
 
@@ -50,6 +49,21 @@
   padding:24px;
 }
 
+
+@media (max-width: 768px) {
+  .dashboard-grid{
+      grid-template-columns: repeat(1, 1fr);
+  }
+  .dashboard-grid-two{
+         flex-direction: column;
+  }
+  .dashboard-grid-right-two{
+    width: 100%;
+  }
+  .dashboard-grid-three{
+      flex-direction: column;
+  }
+}
 
 
 

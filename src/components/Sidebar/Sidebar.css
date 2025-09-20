@@ -8,6 +8,7 @@
   overflow-y: auto;
   gap: 16px;
   background-color:var(--bg-color);
+  height:100dvh;
 }
 
 .user-section {
