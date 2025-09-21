@@ -9,6 +9,8 @@ function TopSelling() {
         <h2 className="secondary-heading">Top Selling Products</h2>
       </div>
 
+      <div className="table-section">
+
       <table className="top-selling-table">
         <thead>
           <tr>
@@ -29,6 +31,8 @@ function TopSelling() {
           ))}
         </tbody>
       </table>
+</div>
+
     </div>
   );
 }

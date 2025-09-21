@@ -22,3 +22,29 @@
   color:var(--text-color);
   font-size: 12px;
 }
+
+
+
+.top-selling-table th:nth-child(1),
+.top-selling-table td:nth-child(1) {
+  min-width: 180px; 
+}
+
+.top-selling-table th:nth-child(2),
+.top-selling-table td:nth-child(2) {
+  min-width: 80px; 
+}
+
+.top-selling-table th:nth-child(3),
+.top-selling-table td:nth-child(3) {
+  min-width: 80px; 
+}
+
+.top-selling-table th:nth-child(4),
+.top-selling-table td:nth-child(4) {
+  min-width: 100px; 
+}
+
+.table-section{
+  overflow-x: auto;
+}

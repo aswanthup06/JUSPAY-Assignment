@@ -19,6 +19,7 @@
 
 .revenue-card {
   background-color: var(--card-bg);
+
 }
 
 .growth-card {
@@ -47,6 +48,7 @@
   font-weight: 400;
   line-height: 18px;
 }
+
 
 
 @media (max-width:480px) {

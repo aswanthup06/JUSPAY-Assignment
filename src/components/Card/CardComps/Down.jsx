@@ -6,8 +6,8 @@ const SvgDown = (props) => (
     width="1em"
     height="1em"
     viewBox="0 0 16 16"
-    fill="currentColor"   // 👈 key change
-    className={props.className} // 👈 allows CSS classes
+    fill="currentColor"   
+    className={props.className} 
     {...props}
   >
     <path
