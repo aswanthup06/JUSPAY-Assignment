@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import SvgSun from "./IconComps/IconSun";
 import SvgHistory from "./IconComps/History";
 import SvgBell from "./IconComps/Bell";
@@ -9,7 +10,10 @@ import SvgText from "../../components/icons/Text";
 import "./Navbar.css";
 
 function Navbar({ toggleSidebar, toggleRightSidebar }) {
-  const [darkMode, setDarkMode] = useState(false);
+  const navigate = useNavigate();
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("darkMode") === "true";
+  });
 
   useEffect(() => {
     if (darkMode) {
@@ -17,7 +21,12 @@ function Navbar({ toggleSidebar, toggleRightSidebar }) {
     } else {
       document.body.classList.remove("dark");
     }
+    localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
+
+  const goHome = () => {
+    navigate("/");
+  };
 
   return (
     <header className="navbar">
@@ -25,7 +34,7 @@ function Navbar({ toggleSidebar, toggleRightSidebar }) {
         <button className="nav-buttons" onClick={toggleSidebar}>
           <SvgSide className="icon-set" />
         </button>
-        <button className="nav-buttons">
+        <button className="nav-buttons" onClick={goHome}>
           <SvgStar className="icon-set" />
         </button>
         <div className="location-nav">
@@ -41,7 +50,6 @@ function Navbar({ toggleSidebar, toggleRightSidebar }) {
             <SvgSearch />
             <input type="text" placeholder="Search..." className="search" />
           </div>
-
           <SvgText />
         </div>
 
@@ -52,10 +60,10 @@ function Navbar({ toggleSidebar, toggleRightSidebar }) {
           >
             <SvgSun className="icon-set" />
           </button>
-          <button className="nav-buttons">
+          <button className="nav-buttons" onClick={goHome}>
             <SvgHistory className="icon-set" />
           </button>
-          <button className="nav-buttons">
+          <button className="nav-buttons" onClick={goHome}>
             <SvgBell className="icon-set" />
           </button>
           <button className="nav-buttons" onClick={toggleRightSidebar}>

@@ -78,7 +78,7 @@ export default function Revenue() {
             data={data} 
             margin={{ top: 10, right: 5, left: 0, bottom: 0 }}
           >
-            <CartesianGrid vertical={false} stroke="#eef2f6" />
+            <CartesianGrid vertical={false} stroke="#d9dbdeff" />
             <XAxis 
               dataKey="month" 
               axisLine={false} 

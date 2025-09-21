@@ -22,8 +22,9 @@
   --input-border: #ddd;
   --default-style: #1c1c1c;
   --light-blue: #a8c5da;
-  --light-bg:  #e2e8f0;
-  --hover-main:#1C1C1C0D;
+  --light-bg: #e2e8f0;
+  --hover-main: #1c1c1c0d;
+  --hover-text: rgba(28, 28, 28, 0.8);
 }
 
 body.dark {
@@ -37,7 +38,8 @@ body.dark {
   --default-style: #c6c7f8;
   --light-blue: #a8c5da;
   --light-bg: rgba(28, 28, 28, 0.4);
-  --hover-main:#FFFFFF1A;
+  --hover-main: #ffffff1a;
+  --hover-text: rgba(255, 255, 255, 0.4);
 }
 
 body {

@@ -1,26 +1,46 @@
-.activities-card{
-    display: flex;
-    align-items:start;
-    gap:8px;
-    padding: 4px;
+.activities-card {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 4px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease,
+    box-shadow 0.25s ease;
 }
 
-.activities-profile{
-    height:24px;
-    width:24px;
-    background-color: rgb(186, 187, 187);
-    border-radius:50px;
-    overflow: hidden;
+.activities-card:hover {
+  background-color: var(--hover-main, #f5faff);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  color: var(--hover-text);
 }
 
-.activities-profile-img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.activities-card:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
-.activities-card-section{
-    display: flex;
-    flex-direction: column;
-    gap:8px;
+.activities-profile {
+  height: 24px;
+  width: 24px;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.activities-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.activities-card:hover .activities-profile {
+  transform: scale(1.05);
+}
+
+.activities-card-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

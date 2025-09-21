@@ -19,22 +19,18 @@ function useWindowWidth() {
 function DashboardLayout({ children }) {
   const width = useWindowWidth();
 
-  // On small screens, both are closed by default
-  const [isSidebarVisible, setIsSidebarVisible] = useState(width > 768);
-  const [isRightSidebarVisible, setIsRightSidebarVisible] = useState(width > 768);
+  // Default visibility based on width
+  const [isSidebarVisible, setIsSidebarVisible] = useState(width > 1080);
+  const [isRightSidebarVisible, setIsRightSidebarVisible] = useState(width > 1200); // changed to 1200
 
   useEffect(() => {
-    if (width <= 1080) {
-      setIsSidebarVisible(false);
-      setIsRightSidebarVisible(false);
-    } else {
-      setIsSidebarVisible(true);
-      setIsRightSidebarVisible(true);
-    }
+    // Adjust visibility on resize
+    setIsSidebarVisible(width > 1080);
+    setIsRightSidebarVisible(width > 1200); // changed to 1200
   }, [width]);
 
   const toggleSidebar = () => {
-    if (width <= 1080) {
+    if (width <= 1200) {
       setIsSidebarVisible((prev) => !prev);
       setIsRightSidebarVisible(false); // close right sidebar
     } else {
@@ -43,7 +39,7 @@ function DashboardLayout({ children }) {
   };
 
   const toggleRightSidebar = () => {
-    if (width <= 1080) {
+    if (width <= 1200) {
       setIsRightSidebarVisible((prev) => !prev);
       setIsSidebarVisible(false); // close left sidebar
     } else {

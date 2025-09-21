@@ -17,7 +17,7 @@
   padding: 0;
 }
 
-/* Custom styles for Recharts */
+
 .recharts-wrapper {
   margin: 0 !important;
   padding: 0;
@@ -28,12 +28,13 @@
 }
 
 .recharts-cartesian-grid-horizontal line {
-  stroke: #f0f0f0;
+  stroke: var(--hover-main) !important;
+  stroke-width: 0.5px !important;
 }
 
 .recharts-text {
   font-size: 12px;
-  fill: #64748B;
+  fill: #64748b;
 }
 
 .recharts-tooltip-wrapper {
@@ -44,7 +45,7 @@
   display: none;
 }
 
-/* Remove any default margins/padding from the chart container */
+
 .recharts-responsive-container {
   margin: 0;
   padding: 0;
