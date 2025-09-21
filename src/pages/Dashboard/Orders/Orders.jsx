@@ -104,7 +104,7 @@ export default function Orders() {
                   value={searchTerm}
                   onChange={(e) => {
                     setSearchTerm(e.target.value);
-                    setCurrentPage(1); // reset page when search changes
+                    setCurrentPage(1);
                   }}
                 />
               </div>
@@ -197,7 +197,6 @@ export default function Orders() {
             )}
           </div>
 
-          {/* Pagination */}
           <div className="pagination-section">
             <div className="pagination-section-inner">
               <div className="icon-box" onClick={handlePrev}>

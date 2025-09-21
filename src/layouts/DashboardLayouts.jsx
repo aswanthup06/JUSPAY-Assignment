@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import RightSidebar from "../components/RightSide/RightSidebar";
 import Sidebar from "../components/Sidebar/Sidebar";
@@ -19,20 +19,21 @@ function useWindowWidth() {
 function DashboardLayout({ children }) {
   const width = useWindowWidth();
 
-  // Default visibility based on width
   const [isSidebarVisible, setIsSidebarVisible] = useState(width > 1080);
-  const [isRightSidebarVisible, setIsRightSidebarVisible] = useState(width > 1200); // changed to 1200
+  const [isRightSidebarVisible, setIsRightSidebarVisible] = useState(width > 1200);
+
+  const sidebarRef = useRef(null);
+  const rightSidebarRef = useRef(null);
 
   useEffect(() => {
-    // Adjust visibility on resize
     setIsSidebarVisible(width > 1080);
-    setIsRightSidebarVisible(width > 1200); // changed to 1200
+    setIsRightSidebarVisible(width > 1200);
   }, [width]);
 
   const toggleSidebar = () => {
     if (width <= 1200) {
       setIsSidebarVisible((prev) => !prev);
-      setIsRightSidebarVisible(false); // close right sidebar
+      setIsRightSidebarVisible(false);
     } else {
       setIsSidebarVisible((prev) => !prev);
     }
@@ -41,15 +42,43 @@ function DashboardLayout({ children }) {
   const toggleRightSidebar = () => {
     if (width <= 1200) {
       setIsRightSidebarVisible((prev) => !prev);
-      setIsSidebarVisible(false); // close left sidebar
+      setIsSidebarVisible(false);
     } else {
       setIsRightSidebarVisible((prev) => !prev);
     }
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        width <= 1080 &&
+        isSidebarVisible &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target)
+      ) {
+        setIsSidebarVisible(false);
+      }
+
+      if (
+        width <= 1200 &&
+        isRightSidebarVisible &&
+        rightSidebarRef.current &&
+        !rightSidebarRef.current.contains(event.target)
+      ) {
+        setIsRightSidebarVisible(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [width, isSidebarVisible, isRightSidebarVisible]);
+
   return (
     <div className="dashboard-layout">
-      <div className={width <= 1080 ? "sidebar-div" : ""}>
+      <div
+        ref={sidebarRef}
+        className={width <= 1080 ? "sidebar-div" : ""}
+      >
         {isSidebarVisible && <Sidebar />}
       </div>
       <main className="content">
@@ -59,7 +88,10 @@ function DashboardLayout({ children }) {
         />
         <div className="main-content">{children}</div>
       </main>
-      <div className={width <= 1200 ? "sidebar-div2" : ""}>
+      <div
+        ref={rightSidebarRef}
+        className={width <= 1200 ? "sidebar-div2" : ""}
+      >
         {isRightSidebarVisible && <RightSidebar />}
       </div>
     </div>

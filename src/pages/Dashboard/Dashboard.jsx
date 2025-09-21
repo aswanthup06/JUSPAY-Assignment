@@ -48,8 +48,7 @@ function Dashboard() {
           </div>
 
           <div className="dashboard-grid-right dashboard-grid-top-right">
-<Projection />
-
+            <Projection />
           </div>
         </div>
 
