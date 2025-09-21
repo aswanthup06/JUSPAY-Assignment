@@ -23,9 +23,9 @@ function Card({ title, value, change, className = "", link }) {
 
       <div className="card-data">
         <h2 className="value">{value}</h2>
-        <span className={`change ${isNegative ? "down" : "up"}`}>
+        <h3 className={`change ${isNegative ? "down" : "up"}`}>
           {change} {isNegative ? <SvgDown className="icon-set" /> : <SvgUp />}
-        </span>
+        </h3>
       </div>
     </div>
   );
