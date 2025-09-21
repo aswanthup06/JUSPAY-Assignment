@@ -63,7 +63,7 @@ function DashboardLayout({ children }) {
         />
         <div className="main-content">{children}</div>
       </main>
-      <div className={width <= 1080 ? "sidebar-div2" : ""}>
+      <div className={width <= 1200 ? "sidebar-div2" : ""}>
         {isRightSidebarVisible && <RightSidebar />}
       </div>
     </div>

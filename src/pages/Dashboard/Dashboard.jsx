@@ -5,6 +5,7 @@ import TopSelling from "./components/TopSelling/TopSelling";
 import Location from "./components/Location/Location";
 import TotalSales from "./components/TotalSales/TotalSales";
 import Revenue from "./components/Revenue/Revenue";
+import Projection from "./components/Projection/Projection";
 
 function Dashboard() {
   return (
@@ -46,7 +47,10 @@ function Dashboard() {
             />
           </div>
 
-          <div className="dashboard-grid-right"></div>
+          <div className="dashboard-grid-right dashboard-grid-top-right">
+<Projection />
+
+          </div>
         </div>
 
         <div className="dashboard-grid-two">

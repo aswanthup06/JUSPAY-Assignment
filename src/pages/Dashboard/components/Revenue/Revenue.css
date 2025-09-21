@@ -1,0 +1,101 @@
+.revenue-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.revenue-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.revenue-legend {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 12px;
+  color: #475467;
+}
+
+.legend-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.legend-dot.current {
+  background: #111111;
+}
+
+.legend-dot.previous {
+  background: #4da6ff;
+}
+
+.legend-text {
+  font-size: 13px;
+  color: #475467;
+}
+
+.legend-text strong {
+  margin-left: 6px;
+  color: #0f172a;
+}
+
+/* Chart wrapper */
+.chart-wrapper {
+  width: 100%;
+  flex: 1;
+  margin-left: 0;
+}
+
+/* Custom styles for Recharts elements */
+.recharts-cartesian-grid-horizontal line {
+  stroke: #eef2f6;
+}
+
+.recharts-text {
+  font-size: 12px;
+  fill: #64748B;
+}
+
+.recharts-tooltip-wrapper {
+  font-size: 12px;
+}
+
+.recharts-cartesian-axis-line {
+  display: none;
+}
+
+.recharts-cartesian-axis-tick-value {
+  font-size: 12px;
+}
+
+/* Remove extra spacing around chart */
+.recharts-wrapper {
+  margin: 0 !important;
+}
+
+.recharts-surface {
+  overflow: visible;
+}
+
+@media (max-width: 768px) {
+ .revenue-section {
+  height:318px;
+}
+
+.revenue-legend{
+    display: none;
+}
+}

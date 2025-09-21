@@ -24,12 +24,14 @@
  background-color:var(--card-bg); 
  border-radius:16px;
  padding:24px;
+
 }
 
 
 .dashboard-grid-two {
   display:flex;
   gap: 28px;
+   height:318px;
 }
 
 .dashboard-grid-three {
@@ -42,7 +44,7 @@
     flex: 1 1 0%;
 }
 .dashboard-grid-right-two{
-  width:272px;
+  width:202px;
 }
 
 .dashboard-grid-three .dashboard-grid-right{
@@ -56,12 +58,17 @@
   }
   .dashboard-grid-two{
          flex-direction: column;
+         height:auto;
   }
+
   .dashboard-grid-right-two{
     width: 100%;
   }
   .dashboard-grid-three{
       flex-direction: column;
+  }
+  .dashboard-grid-top-right{
+     height:318px;
   }
 }
 

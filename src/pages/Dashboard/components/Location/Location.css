@@ -1,33 +1,33 @@
-.map {
-  width: 100%;
-}
 
-.map-img {
-  width: 100%;
-}
 
+.location-container{
+  display: flex;
+  flex-direction: column;
+  gap:14px;
+  height:100%;
+}
 
 
 .location-header {
-  margin-bottom: 20px;
+ height:fit-content;
 }
 
 .map-container {
-  margin-bottom: 24px;
-  border-radius: 8px;
-  overflow: hidden;
+  flex: 1 1 0%;
+  min-height:10px;
 }
 
 .map-img {
   width: 100%;
-  height: auto;
-  display: block;
+  height:100%;
+  object-fit: cover;
 }
 
 .revenue-list {
+   height:fit-content;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .revenue-item {
@@ -58,17 +58,10 @@
   transition: width 0.3s ease;
 }
 
+
+
 @media (max-width: 768px) {
-  .location-container {
-    padding: 16px;
-  }
-  
-  .secondary-heading {
-    font-size: 1.1rem;
-  }
-  
-  .location-name,
-  .revenue-amount {
-    font-size: 0.875rem;
-  }
+ .map-container {
+  height:fit-content;
+}
 }

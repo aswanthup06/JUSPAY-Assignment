@@ -1,0 +1,51 @@
+.projection-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+.projection-header {
+  margin-bottom: 12px;
+  padding: 0 8px;
+}
+
+.projection-chart-wrapper {
+  width: 100%;
+  flex: 1;
+  padding: 0;
+}
+
+/* Custom styles for Recharts */
+.recharts-wrapper {
+  margin: 0 !important;
+  padding: 0;
+}
+
+.recharts-surface {
+  overflow: visible;
+}
+
+.recharts-cartesian-grid-horizontal line {
+  stroke: #f0f0f0;
+}
+
+.recharts-text {
+  font-size: 12px;
+  fill: #64748B;
+}
+
+.recharts-tooltip-wrapper {
+  font-size: 12px;
+}
+
+.recharts-legend-wrapper {
+  display: none;
+}
+
+/* Remove any default margins/padding from the chart container */
+.recharts-responsive-container {
+  margin: 0;
+  padding: 0;
+}

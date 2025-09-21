@@ -15,6 +15,8 @@ function Location() {
 
   return (
     <div className="location-container">
+
+
       <div className="location-header">
         <h2 className="secondary-heading">Revenue by Location</h2>
       </div>
@@ -40,6 +42,8 @@ function Location() {
           </div>
         ))}
       </div>
+
+      
     </div>
   );
 }

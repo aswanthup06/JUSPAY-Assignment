@@ -1,0 +1,84 @@
+.total-sales-section {
+  display: flex;
+  flex-direction: column;
+  gap:8px;
+}
+
+.total-sales-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.percentage-indicator {
+  background: #10b981;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 16px;
+}
+
+.sales-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.chart-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:120px;
+  height:120px;
+}
+
+
+.sales-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.sales-category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.category-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.category-dot.direct {
+  background: rgba(28, 28, 28, 1);
+}
+
+.category-dot.affiliate {
+  background: rgba(186, 237, 189, 1);
+}
+
+.category-dot.sponsored {
+  background: rgba(149, 164, 252, 1);
+}
+
+.category-dot.email {
+  background: rgba(177, 227, 255, 1);
+}
+
+.category-name {
+  font-size: 14px;
+  color: #475467;
+}
